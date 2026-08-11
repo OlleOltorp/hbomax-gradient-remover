@@ -1,0 +1,5 @@
+div[data-testid="protection_layer"],
+div[class*="TopGradient"],
+div[class*="BottomGradient"] {
+  display: none !important;
+}
