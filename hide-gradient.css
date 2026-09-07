@@ -1,5 +1,15 @@
-div[data-testid="protection_layer"],
+/* Keep HBO Max's click-catching layer so clicking the video still toggles
+   play/pause. Only remove the visual scrim painted on that layer. */
+div[data-testid="protection_layer"] {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* These elements are visual overlays only. Let pointer input pass through to
+   the protection layer above so the player continues to receive clicks. */
 div[class*="TopGradient"],
 div[class*="BottomGradient"] {
-  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
