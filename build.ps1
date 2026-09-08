@@ -8,7 +8,7 @@ $sharedFiles += Get-Item (Join-Path $root 'hide-gradient.css')
 $iconDir = Join-Path $root 'icons'
 if (Test-Path $iconDir) {
     $sharedFiles += Get-ChildItem -Path $iconDir -File -Recurse |
-        Where-Object { $_.Name -ne 'icon-master.png' }
+        Where-Object { $_.Name -match '^icon-(16|32|48|96|128)\.png$' }
 }
 
 function New-ExtensionArchive {
