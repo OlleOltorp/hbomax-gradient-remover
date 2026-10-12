@@ -13,3 +13,12 @@ div[class*="BottomGradient"] {
   opacity: 0 !important;
   pointer-events: none !important;
 }
+
+/* Same idea as protection_layer: this is the scrim shown behind the
+   buffering / 10s-skip loading spinner (inside data-testid="buffering").
+   Strip the paint but keep the element so it doesn't break hit-testing. */
+div[class*="StyledProtection"] {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
